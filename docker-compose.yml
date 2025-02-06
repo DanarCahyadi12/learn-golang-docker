@@ -1,12 +1,34 @@
 version: '3.8'
 
 services:
+
+  # Service name.
+  # Change the service name if needed.
   app:
+
+    # Container name.
+    # You can change the container name whatever you want.
     container_name: go-app
+
+    # Where the container will be working.
+    # The container will work/run in /app directory.
     working_dir: /app
+
+    # This image for live reloading.
+    # If any change occur on your `host`, the container (go-app) will be automatically reload.
+    # So, you don't need re-build repeatedly.
     image: cosmtrek/air
+
+
+    # Mount the host file to working directory.
+    # Make sure you don't delete it.
     volumes:
       - ./:/app
+
+    # Expose to `8080` port.
+    # You can change the port whatever you want.
     ports:
       - 8080:8080
+
+    # Run `air`command for live reloading.
     command: sh -c "air"
