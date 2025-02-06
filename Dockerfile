@@ -8,7 +8,7 @@ RUN go build main.go
 
 
 # Final stage.
-# It's only `main` file on this stage. So, the size will be decrease.
+# It's only `main` file on this stage. So, the size will be decreased.
 FROM alpine:3 AS prod
 WORKDIR /app
 COPY --from=builder /app/main .
