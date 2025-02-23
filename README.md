@@ -10,7 +10,7 @@ I've been learning Docker with Golang.
 
 There are 2 stages in `Dockerfile` : 
 
-- `builder`: This stage is for building our app to execution binary file.  And the binary file will be storing in `app` work directory.
+- `builder`: This stage is for building our app into `.exe` file.  And the binary file will be storing in `app` work directory.
 - `prod`: This stage is our final stage. We use `alpine` for running our application. This stage will be copying binary file from `builder` stage and running the application.
 
 
